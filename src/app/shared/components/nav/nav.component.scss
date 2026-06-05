@@ -1,0 +1,255 @@
+// ─── Nav Component ────────────────────────────────────────────
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  transition: all 0.4s ease;
+
+  // Transparente en home, visible después
+  &:not(.nav--home) {
+    background: rgba(245, 237, 224, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(181, 137, 42, 0.2);
+    box-shadow: 0 2px 20px rgba(44, 32, 24, 0.08);
+  }
+
+  &--scrolled {
+    background: rgba(245, 237, 224, 0.97) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(181, 137, 42, 0.25) !important;
+    box-shadow: 0 4px 30px rgba(44, 32, 24, 0.12) !important;
+  }
+}
+
+// ─── Brand ────────────────────────────────────────────────────
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--garnet);
+  letter-spacing: 0.05em;
+  transition: color var(--transition-mid);
+
+  &:hover { color: var(--gold); }
+}
+
+.nav__brand-star {
+  font-size: 0.7rem;
+  color: var(--gold);
+  animation: shimmer 3s ease infinite;
+}
+
+.nav__brand-text {
+  font-style: italic;
+}
+
+// ─── Desktop links ────────────────────────────────────────────
+.nav__links {
+  display: none;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+
+  @media (min-width: 900px) {
+    display: flex;
+  }
+}
+
+.nav__link {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color var(--transition-mid);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width var(--transition-mid);
+  }
+
+  &:hover {
+    color: var(--garnet);
+    &::after { width: 100%; }
+  }
+
+  &--active {
+    color: var(--garnet);
+    &::after { width: 100%; }
+  }
+}
+
+// ─── Mobile toggle ────────────────────────────────────────────
+.nav__toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1100;
+
+  @media (min-width: 900px) {
+    display: none;
+  }
+}
+
+.nav__toggle-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--garnet);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+// ─── Mobile overlay ───────────────────────────────────────────
+.nav__mobile {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(85vw, 360px);
+  height: 100vh;
+  background: var(--ivory);
+  background-image:
+    radial-gradient(ellipse at top, var(--parchment) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom, var(--cream-dark) 0%, transparent 60%);
+  border-left: 1px solid var(--gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1050;
+  overflow-y: auto;
+
+  &--open {
+    right: 0;
+  }
+}
+
+.nav__mobile-deco {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  color: var(--gold);
+  opacity: 0.5;
+
+  &--tl { top: 1rem; left: 1rem; }
+}
+
+.nav__mobile-star {
+  width: 36px;
+  height: 36px;
+  color: var(--gold);
+  animation: floatGently 4s ease infinite;
+}
+
+.nav__mobile-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  margin-top: -0.5rem;
+}
+
+.nav__mobile-list {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  li {
+    animation: fadeInUp 0.4s both;
+    opacity: 0;
+
+    .nav__mobile--open & {
+      opacity: 1;
+      animation-play-state: running;
+    }
+  }
+}
+
+.nav__mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: all var(--transition-mid);
+  width: 100%;
+
+  &:hover, &--active {
+    background: rgba(181, 137, 42, 0.08);
+    border-color: rgba(181, 137, 42, 0.3);
+    color: var(--garnet);
+  }
+}
+
+.nav__mobile-icon {
+  font-size: 1.2rem;
+  width: 28px;
+  text-align: center;
+}
+
+.nav__mobile-footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+
+  p {
+    font-size: 0.8rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.1em;
+  }
+
+  .ornament-divider {
+    margin: 0.5rem 0;
+    color: var(--gold);
+  }
+}
+
+// ─── Backdrop ─────────────────────────────────────────────────
+.nav__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 32, 24, 0.4);
+  z-index: 1040;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-mid);
+  backdrop-filter: blur(2px);
+
+  &--visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+}

@@ -1,0 +1,96 @@
+<nav class="nav" [class.nav--scrolled]="isScrolled()" [class.nav--home]="isHome()" role="navigation" aria-label="Navegación principal">
+  <!-- Logo / Home link -->
+  <a routerLink="/" class="nav__brand" (click)="closeMenu()">
+    <span class="nav__brand-star">✦</span>
+    <span class="nav__brand-text">Sara &amp; Fernando</span>
+    <span class="nav__brand-star">✦</span>
+  </a>
+
+  <!-- Desktop nav links -->
+  <ul class="nav__links" role="list">
+    <li *ngFor="let item of navItems">
+      <a
+        [routerLink]="item.path"
+        routerLinkActive="nav__link--active"
+        class="nav__link"
+        [attr.aria-label]="item.label"
+      >
+        {{ item.label }}
+      </a>
+    </li>
+  </ul>
+
+  <!-- Mobile hamburger -->
+  <button
+    class="nav__toggle"
+    (click)="toggleMenu()"
+    [attr.aria-expanded]="isOpen()"
+    aria-controls="mobile-menu"
+    aria-label="Abrir menú"
+  >
+    <span class="nav__toggle-bar"></span>
+    <span class="nav__toggle-bar"></span>
+    <span class="nav__toggle-bar"></span>
+  </button>
+
+  <!-- Mobile menu overlay -->
+  <div
+    id="mobile-menu"
+    class="nav__mobile"
+    [class.nav__mobile--open]="isOpen()"
+    role="dialog"
+    aria-label="Menú de navegación"
+  >
+    <!-- Corner decorations -->
+    <div class="nav__mobile-deco nav__mobile-deco--tl">
+      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 55 Q5 5 55 5" stroke="currentColor" stroke-width="1" fill="none"/>
+        <circle cx="5" cy="55" r="3" fill="currentColor"/>
+        <circle cx="55" cy="5" r="3" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- Star topper -->
+    <div class="nav__mobile-star" aria-hidden="true">
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 2l3.09 9.5H32l-7.27 5.28 2.78 8.5L20 20l-7.51 5.28 2.78-8.5L8 11.5h8.91z" fill="currentColor"/>
+        <line x1="20" y1="0" x2="20" y2="4" stroke="currentColor" stroke-width="1"/>
+        <line x1="20" y1="36" x2="20" y2="40" stroke="currentColor" stroke-width="1"/>
+        <line x1="0" y1="20" x2="4" y2="20" stroke="currentColor" stroke-width="1"/>
+        <line x1="36" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <p class="nav__mobile-subtitle">12 · 12 · 2026</p>
+
+    <ul class="nav__mobile-list" role="list">
+      <li *ngFor="let item of navItems; let i = index"
+          [style.animation-delay]="(i * 0.08) + 's'">
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="nav__mobile-link--active"
+          class="nav__mobile-link"
+          (click)="closeMenu()"
+        >
+          <span class="nav__mobile-icon" aria-hidden="true">{{ item.icon }}</span>
+          <span>{{ item.label }}</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="nav__mobile-footer">
+      <div class="ornament-divider">
+        <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1l1.5 4.6H14l-3.9 2.8 1.5 4.6L8 10.2l-3.6 2.8 1.5-4.6L2 5.6h4.5z" fill="currentColor"/></svg>
+      </div>
+      <p>Madrid · Diciembre 2026</p>
+    </div>
+  </div>
+
+  <!-- Mobile overlay backdrop -->
+  <div
+    class="nav__backdrop"
+    [class.nav__backdrop--visible]="isOpen()"
+    (click)="closeMenu()"
+    aria-hidden="true"
+  ></div>
+</nav>

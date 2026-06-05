@@ -1,0 +1,429 @@
+<section class="confirmacion-page">
+
+  <!-- Corner decorations -->
+  <div class="corner-decor corner-tl" aria-hidden="true">
+    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.82">
+        <line x1="10" y1="10" x2="110" y2="30" stroke="#2d4a2d" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="10" y1="10" x2="90" y2="60" stroke="#2d4a2d" stroke-width="2" stroke-linecap="round"/>
+        <line x1="35" y1="15" x2="30" y2="5" stroke="#2d4a2d" stroke-width="1.2"/>
+        <line x1="35" y1="15" x2="42" y2="8" stroke="#2d4a2d" stroke-width="1.2"/>
+        <line x1="60" y1="22" x2="55" y2="12" stroke="#2d4a2d" stroke-width="1.2"/>
+        <line x1="60" y1="22" x2="67" y2="15" stroke="#2d4a2d" stroke-width="1.2"/>
+        <line x1="85" y1="28" x2="80" y2="18" stroke="#2d4a2d" stroke-width="1.2"/>
+        <line x1="40" y1="28" x2="33" y2="22" stroke="#2d4a2d" stroke-width="1.2"/>
+        <line x1="60" y1="40" x2="52" y2="36" stroke="#2d4a2d" stroke-width="1.2"/>
+        <circle cx="90" cy="25" r="4" fill="#8b2020" opacity="0.9"/>
+        <circle cx="95" cy="32" r="3.5" fill="#8b2020" opacity="0.9"/>
+        <circle cx="83" cy="20" r="3" fill="#8b2020" opacity="0.8"/>
+        <ellipse cx="108" cy="32" rx="7" ry="10" fill="#9a7040" opacity="0.8"/>
+        <path d="M101 28 Q108 24 115 28" fill="#b5892a" opacity="0.6"/>
+        <path d="M100 31 Q108 27 116 31" fill="#9a7040" opacity="0.5"/>
+        <path d="M101 34 Q108 30 115 34" fill="#7a5830" opacity="0.5"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="corner-decor corner-tr" aria-hidden="true">
+    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.82" transform="scale(-1,1) translate(-120,0)">
+        <line x1="10" y1="10" x2="110" y2="30" stroke="#2d4a2d" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="10" y1="10" x2="90" y2="60" stroke="#2d4a2d" stroke-width="2" stroke-linecap="round"/>
+        <line x1="35" y1="15" x2="30" y2="5" stroke="#2d4a2d" stroke-width="1.2"/>
+        <line x1="60" y1="22" x2="55" y2="12" stroke="#2d4a2d" stroke-width="1.2"/>
+        <line x1="60" y1="22" x2="67" y2="15" stroke="#2d4a2d" stroke-width="1.2"/>
+        <line x1="85" y1="28" x2="80" y2="18" stroke="#2d4a2d" stroke-width="1.2"/>
+        <circle cx="90" cy="25" r="4" fill="#8b2020" opacity="0.9"/>
+        <circle cx="95" cy="32" r="3.5" fill="#8b2020" opacity="0.9"/>
+        <ellipse cx="108" cy="32" rx="7" ry="10" fill="#9a7040" opacity="0.8"/>
+        <path d="M101 28 Q108 24 115 28" fill="#b5892a" opacity="0.6"/>
+        <path d="M100 31 Q108 27 116 31" fill="#9a7040" opacity="0.5"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Page header -->
+  <header class="confirmacion-header">
+    <div class="gold-star" aria-hidden="true">
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="55" height="55">
+        <path d="M30,2 L32,22 L50,15 L36,28 L58,30 L36,32 L50,45 L32,38 L30,58 L28,38 L10,45 L24,32 L2,30 L24,28 L10,15 L28,22 Z"
+              fill="#b5892a" opacity="0.9"/>
+        <circle cx="30" cy="30" r="3" fill="#faf6ef"/>
+      </svg>
+    </div>
+    <h1 class="confirmacion-title">Confirmación</h1>
+    <div class="title-ornament" aria-hidden="true">
+      <svg viewBox="0 0 220 18" xmlns="http://www.w3.org/2000/svg" width="220">
+        <line x1="0" y1="9" x2="88" y2="9" stroke="#b5892a" stroke-width="0.8" opacity="0.6"/>
+        <path d="M92,9 C94,5 99,4 101,7 C99,10 94,10 92,9Z" fill="#2d4a2d" opacity="0.6"/>
+        <circle cx="110" cy="9" r="3" fill="#8b2020" opacity="0.7"/>
+        <path d="M118,9 C120,5 125,4 127,7 C125,10 120,10 118,9Z" fill="#2d4a2d" opacity="0.6" transform="scale(-1,1) translate(-245,0)"/>
+        <line x1="132" y1="9" x2="220" y2="9" stroke="#b5892a" stroke-width="0.8" opacity="0.6"/>
+      </svg>
+    </div>
+    <p class="confirmacion-subtitle">
+      Haznos saber si podrás acompañarnos en este día tan especial.
+    </p>
+  </header>
+
+  <!-- ══ SUCCESS STATE ══════════════════════════════════════════════════════ -->
+  @if (status() === 'success') {
+    <div class="success-card" role="status" aria-live="polite">
+      <div class="success-illustration" aria-hidden="true">
+        <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" width="160">
+          <!-- Envelope -->
+          <rect x="20" y="55" width="120" height="85" rx="4" fill="#e8d8b0" stroke="#c8a870" stroke-width="1.5"/>
+          <path d="M20,55 L80,100 L140,55 Z" fill="#ddd0a0" stroke="#c8a870" stroke-width="1"/>
+          <path d="M20,140 L65,100" fill="none" stroke="#c8a870" stroke-width="0.8"/>
+          <path d="M140,140 L95,100" fill="none" stroke="#c8a870" stroke-width="0.8"/>
+          <!-- Wax seal -->
+          <circle cx="80" cy="115" r="18" fill="#7a2020"/>
+          <circle cx="80" cy="115" r="15" fill="#8b2525"/>
+          <path d="M80,104 C77,107 72,110 73,115 C74,120 78,122 80,119 C82,122 86,120 87,115 C88,110 83,107 80,104 Z"
+                fill="#6b1818" opacity="0.7"/>
+          <!-- Check mark -->
+          <polyline points="60,115 75,130 105,100"
+                    fill="none" stroke="#faf0e0" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Stars around -->
+          <polygon points="30,45 31,48 34,48 32,50 33,53 30,51 27,53 28,50 26,48 29,48" fill="#b5892a" opacity="0.7"/>
+          <polygon points="130,40 131,43 134,43 132,45 133,48 130,46 127,48 128,45 126,43 129,43" fill="#b5892a" opacity="0.7"/>
+        </svg>
+      </div>
+
+      <h2 class="success-title">¡Recibido con alegría!</h2>
+      <p class="success-text">
+        Tu confirmación ha llegado sana y salva.<br>
+        ¡Nos muero de ganas de veros en diciembre!
+      </p>
+      <div class="success-heart" aria-hidden="true">♥</div>
+
+      <button class="btn-secondary" (click)="resetForm()" type="button">
+        Enviar otra respuesta
+      </button>
+    </div>
+  }
+
+  <!-- ══ FORM ══════════════════════════════════════════════════════════════ -->
+  @if (status() === 'idle' || status() === 'sending' || status() === 'error') {
+    <div class="form-wrapper">
+      <form
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+        novalidate
+        class="rsvp-form"
+        aria-label="Formulario de confirmación de asistencia">
+
+        <!-- Error banner -->
+        @if (status() === 'error') {
+          <div class="error-banner" role="alert">
+            <span>⚠ {{ errorMessage() }}</span>
+          </div>
+        }
+
+        <!-- ── Personal data ──────────────────────────────── -->
+        <fieldset class="form-section">
+          <legend class="section-legend">
+            <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" width="12" aria-hidden="true">
+              <circle cx="6" cy="6" r="4" fill="#b5892a" opacity="0.7"/>
+            </svg>
+            Tus datos
+            <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" width="12" aria-hidden="true">
+              <circle cx="6" cy="6" r="4" fill="#b5892a" opacity="0.7"/>
+            </svg>
+          </legend>
+
+          <div class="form-row form-row--two">
+            <!-- Nombre -->
+            <div class="form-field" [class.is-invalid]="isInvalid(nombre)">
+              <label for="nombre" class="field-label">Nombre <span class="required" aria-hidden="true">*</span></label>
+              <input
+                id="nombre"
+                type="text"
+                formControlName="nombre"
+                class="field-input"
+                autocomplete="given-name"
+                [attr.aria-invalid]="isInvalid(nombre)"
+                aria-describedby="nombre-error"
+                placeholder="Sara"/>
+              @if (isInvalid(nombre)) {
+                <span id="nombre-error" class="field-error" role="alert">
+                  @if (nombre.errors?.['required']) { El nombre es obligatorio. }
+                  @else if (nombre.errors?.['minlength']) { Mínimo 2 caracteres. }
+                </span>
+              }
+            </div>
+
+            <!-- Apellidos -->
+            <div class="form-field" [class.is-invalid]="isInvalid(apellidos)">
+              <label for="apellidos" class="field-label">Apellidos <span class="required" aria-hidden="true">*</span></label>
+              <input
+                id="apellidos"
+                type="text"
+                formControlName="apellidos"
+                class="field-input"
+                autocomplete="family-name"
+                [attr.aria-invalid]="isInvalid(apellidos)"
+                aria-describedby="apellidos-error"
+                placeholder="García López"/>
+              @if (isInvalid(apellidos)) {
+                <span id="apellidos-error" class="field-error" role="alert">
+                  @if (apellidos.errors?.['required']) { Los apellidos son obligatorios. }
+                </span>
+              }
+            </div>
+          </div>
+
+          <div class="form-row form-row--two">
+            <!-- Email -->
+            <div class="form-field" [class.is-invalid]="isInvalid(email)">
+              <label for="email" class="field-label">Email <span class="required" aria-hidden="true">*</span></label>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                class="field-input"
+                autocomplete="email"
+                [attr.aria-invalid]="isInvalid(email)"
+                aria-describedby="email-error"
+                placeholder="sara@ejemplo.com"/>
+              @if (isInvalid(email)) {
+                <span id="email-error" class="field-error" role="alert">
+                  @if (email.errors?.['required']) { El email es obligatorio. }
+                  @else if (email.errors?.['email']) { Introduce un email válido. }
+                </span>
+              }
+            </div>
+
+            <!-- Teléfono -->
+            <div class="form-field" [class.is-invalid]="isInvalid(telefono)">
+              <label for="telefono" class="field-label">Teléfono</label>
+              <input
+                id="telefono"
+                type="tel"
+                formControlName="telefono"
+                class="field-input"
+                autocomplete="tel"
+                [attr.aria-invalid]="isInvalid(telefono)"
+                aria-describedby="telefono-error"
+                placeholder="+34 600 000 000"/>
+              @if (isInvalid(telefono)) {
+                <span id="telefono-error" class="field-error" role="alert">
+                  Introduce un teléfono válido.
+                </span>
+              }
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- ── Attendance ─────────────────────────────────── -->
+        <fieldset class="form-section">
+          <legend class="section-legend">
+            <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" width="12" aria-hidden="true">
+              <circle cx="6" cy="6" r="4" fill="#b5892a" opacity="0.7"/>
+            </svg>
+            Asistencia
+            <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" width="12" aria-hidden="true">
+              <circle cx="6" cy="6" r="4" fill="#b5892a" opacity="0.7"/>
+            </svg>
+          </legend>
+
+          <!-- Asistirá -->
+          <div class="form-field" [class.is-invalid]="isInvalid(asistira)">
+            <label class="field-label">
+              ¿Asistirás? <span class="required" aria-hidden="true">*</span>
+            </label>
+            <div class="radio-group" role="radiogroup" aria-label="¿Asistirás a la boda?">
+              <label class="radio-option" [class.radio-option--selected]="asistira.value === 'true'">
+                <input
+                  type="radio"
+                  formControlName="asistira"
+                  value="true"
+                  aria-checked="{{ asistira.value === 'true' }}"/>
+                <span class="radio-custom" aria-hidden="true"></span>
+                <span class="radio-label">
+                  <span class="radio-icon" aria-hidden="true">♥</span>
+                  Sí, allí estaré
+                </span>
+              </label>
+              <label class="radio-option" [class.radio-option--selected]="asistira.value === 'false'">
+                <input
+                  type="radio"
+                  formControlName="asistira"
+                  value="false"
+                  aria-checked="{{ asistira.value === 'false' }}"/>
+                <span class="radio-custom" aria-hidden="true"></span>
+                <span class="radio-label">
+                  <span class="radio-icon" aria-hidden="true">✦</span>
+                  No podré asistir
+                </span>
+              </label>
+            </div>
+            @if (isInvalid(asistira)) {
+              <span class="field-error" role="alert">Por favor, indica si asistirás.</span>
+            }
+          </div>
+
+          <!-- Acompañantes (only if attending) -->
+          @if (asistira.value === 'true') {
+            <div class="form-field" [class.is-invalid]="isInvalid(acompanantes)">
+              <label for="acompanantes" class="field-label">
+                Número de acompañantes
+                <span class="field-hint">(sin contarte a ti)</span>
+              </label>
+              <div class="number-input-wrapper">
+                <button
+                  type="button"
+                  class="number-btn"
+                  aria-label="Reducir número de acompañantes"
+                  (click)="decrementAcompanantes()">−</button>
+                <input
+                  id="acompanantes"
+                  type="number"
+                  formControlName="acompanantes"
+                  class="field-input field-input--number"
+                  min="0"
+                  max="10"
+                  [attr.aria-invalid]="isInvalid(acompanantes)"
+                  aria-describedby="acompanantes-error"/>
+                <button
+                  type="button"
+                  class="number-btn"
+                  aria-label="Aumentar número de acompañantes"
+                  (click)="incrementAcompanantes()">+</button>
+              </div>
+              @if (isInvalid(acompanantes)) {
+                <span id="acompanantes-error" class="field-error" role="alert">
+                  El número debe estar entre 0 y 10.
+                </span>
+              }
+            </div>
+          }
+        </fieldset>
+
+        <!-- ── Additional info ────────────────────────────── -->
+        <fieldset class="form-section">
+          <legend class="section-legend">
+            <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" width="12" aria-hidden="true">
+              <circle cx="6" cy="6" r="4" fill="#b5892a" opacity="0.7"/>
+            </svg>
+            Información adicional
+            <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" width="12" aria-hidden="true">
+              <circle cx="6" cy="6" r="4" fill="#b5892a" opacity="0.7"/>
+            </svg>
+          </legend>
+
+          <!-- Restricciones alimentarias -->
+          <div class="form-field" [class.is-invalid]="isInvalid(restricciones)">
+            <label for="restricciones" class="field-label">
+              Restricciones alimentarias
+              <span class="field-hint">(alergias, intolerancias, preferencias)</span>
+            </label>
+            <textarea
+              id="restricciones"
+              formControlName="restricciones"
+              class="field-textarea"
+              rows="3"
+              [attr.aria-invalid]="isInvalid(restricciones)"
+              aria-describedby="restricciones-error"
+              placeholder="Sin gluten, alérgico a los frutos secos…">
+            </textarea>
+            <span class="char-count" [class.char-count--warning]="(restricciones.value?.length || 0) > 250">
+              {{ restricciones.value?.length || 0 }}/300
+            </span>
+            @if (isInvalid(restricciones)) {
+              <span id="restricciones-error" class="field-error" role="alert">
+                Máximo 300 caracteres.
+              </span>
+            }
+          </div>
+
+          <!-- Comentarios -->
+          <div class="form-field" [class.is-invalid]="isInvalid(comentarios)">
+            <label for="comentarios" class="field-label">
+              Algo que quieras contarnos
+            </label>
+            <textarea
+              id="comentarios"
+              formControlName="comentarios"
+              class="field-textarea"
+              rows="4"
+              [attr.aria-invalid]="isInvalid(comentarios)"
+              aria-describedby="comentarios-error"
+              placeholder="Una canción que no puede faltar, un recuerdo compartido…">
+            </textarea>
+            <span class="char-count" [class.char-count--warning]="(comentarios.value?.length || 0) > 420">
+              {{ comentarios.value?.length || 0 }}/500
+            </span>
+            @if (isInvalid(comentarios)) {
+              <span id="comentarios-error" class="field-error" role="alert">
+                Máximo 500 caracteres.
+              </span>
+            }
+          </div>
+        </fieldset>
+
+        <!-- Required fields note -->
+        <p class="required-note">
+          <span class="required" aria-hidden="true">*</span> Campos obligatorios
+        </p>
+
+        <!-- Submit button -->
+        <div class="form-actions">
+          <button
+            type="submit"
+            class="btn-submit"
+            [class.btn-submit--loading]="status() === 'sending'"
+            [disabled]="status() === 'sending'"
+            [attr.aria-busy]="status() === 'sending'">
+
+            @if (status() === 'sending') {
+              <span class="loading-dots" aria-label="Enviando…">
+                <span></span><span></span><span></span>
+              </span>
+            } @else {
+              <span class="btn-inner">
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" width="18" aria-hidden="true">
+                  <path d="M2,10 L18,10 M12,4 L18,10 L12,16"
+                        fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Enviar confirmación
+              </span>
+            }
+          </button>
+        </div>
+
+      </form>
+    </div>
+  }
+
+  <!-- Bottom Madrid skyline -->
+  <div class="skyline-footer" aria-hidden="true">
+    <svg viewBox="0 0 800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+      <!-- Palacio Real -->
+      <rect x="60" y="30" width="90" height="50" fill="#c8b898" opacity="0.3"/>
+      <path d="M55,30 Q105,10 155,30" fill="#b5a080" opacity="0.3"/>
+      <!-- Small towers -->
+      <rect x="68" y="20" width="8" height="12" fill="#b5a080" opacity="0.3"/>
+      <rect x="140" y="20" width="8" height="12" fill="#b5a080" opacity="0.3"/>
+      <!-- Almudena -->
+      <rect x="200" y="20" width="70" height="60" fill="#c8b898" opacity="0.28"/>
+      <path d="M220,20 Q235,5 250,20" fill="#b5a080" opacity="0.3"/>
+      <path d="M200,20 Q235,0 270,20" fill="#c8b898" opacity="0.2"/>
+      <!-- Buildings -->
+      <rect x="320" y="35" width="40" height="45" fill="#c8b898" opacity="0.25"/>
+      <rect x="370" y="25" width="30" height="55" fill="#b5a080" opacity="0.25"/>
+      <rect x="410" y="40" width="50" height="40" fill="#c8b898" opacity="0.2"/>
+      <!-- Cibeles area -->
+      <rect x="480" y="30" width="60" height="50" fill="#c8b898" opacity="0.28"/>
+      <rect x="510" y="15" width="20" height="18" fill="#b5a080" opacity="0.3"/>
+      <!-- Metropolis -->
+      <rect x="590" y="20" width="50" height="60" fill="#c8b898" opacity="0.28"/>
+      <path d="M615,5 Q615,20 630,20 Q630,5 615,5Z" fill="#b5a080" opacity="0.3"/>
+      <!-- Ground line -->
+      <line x1="0" y1="80" x2="800" y2="80" stroke="#b5a080" stroke-width="0.5" opacity="0.3"/>
+    </svg>
+  </div>
+
+</section>

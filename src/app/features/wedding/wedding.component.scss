@@ -1,0 +1,283 @@
+// ─── La Boda ──────────────────────────────────────────────────
+.wedding {
+  min-height: 100vh;
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(ellipse at top, var(--cream-dark) 0%, transparent 50%);
+  padding-bottom: var(--space-3xl);
+}
+
+// ─── Header ───────────────────────────────────────────────────
+.wedding__header {
+  text-align: center;
+  padding: 6rem var(--space-lg) var(--space-xl);
+  position: relative;
+}
+
+.wedding__header-stars {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: var(--space-sm);
+
+  span {
+    color: var(--gold);
+    font-size: 0.65rem;
+    animation: shimmer 3s ease infinite;
+
+    &:nth-child(2) { animation-delay: 1s; font-size: 0.8rem; }
+    &:nth-child(3) { animation-delay: 2s; }
+  }
+}
+
+.wedding__date-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--sepia);
+  margin-bottom: var(--space-sm);
+}
+
+.wedding__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  color: var(--garnet);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
+}
+
+// ─── Body layout ──────────────────────────────────────────────
+.wedding__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+// ─── Columna izquierda ────────────────────────────────────────
+.wedding__left {
+  flex: 1;
+
+  @media (min-width: 768px) {
+    max-width: 380px;
+  }
+}
+
+.wedding__venue-card {
+  background: rgba(255, 252, 245, 0.7);
+  border: 1px solid rgba(181, 137, 42, 0.25);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-lg);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(181, 137, 42, 0.12);
+    pointer-events: none;
+  }
+}
+
+.wedding__venue-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--sepia);
+  text-align: center;
+  margin-bottom: var(--space-sm);
+}
+
+.wedding__venue-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  color: var(--garnet);
+  text-align: center;
+  margin-bottom: var(--space-sm);
+  font-style: italic;
+}
+
+.wedding__venue-description {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink-soft);
+  text-align: center;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.wedding__envelope {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-lg);
+
+  svg {
+    width: 100px;
+    filter: drop-shadow(0 3px 8px rgba(44, 32, 24, 0.15));
+  }
+}
+
+.wedding__venue-illustration {
+  svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 16px rgba(44, 32, 24, 0.12));
+  }
+}
+
+// ─── Timeline de eventos ──────────────────────────────────────
+.wedding__timeline {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding-left: 60px;
+
+  @media (min-width: 768px) {
+    padding-left: 70px;
+  }
+}
+
+.wedding__timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 14px;
+  bottom: 14px;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--gold) 10%, var(--gold) 90%, transparent);
+  opacity: 0.5;
+}
+
+.wedding__event {
+  position: relative;
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  animation: fadeInUp 0.6s both;
+}
+
+.wedding__event-dot {
+  position: absolute;
+  left: -52px;
+  top: 4px;
+  width: 28px;
+  height: 28px;
+
+  svg { width: 100%; height: 100%; }
+}
+
+.wedding__event-icon-circle {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--parchment);
+  border: 1.5px solid rgba(181, 137, 42, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 2px 8px rgba(44, 32, 24, 0.1);
+
+  @media (min-width: 768px) {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+  }
+}
+
+.wedding__event-emoji {
+  line-height: 1;
+}
+
+.wedding__event-content {
+  flex: 1;
+  padding-top: 4px;
+}
+
+.wedding__event-time {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  color: var(--garnet);
+  display: block;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.wedding__event-title {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: var(--space-xs);
+  font-weight: 400;
+}
+
+.wedding__event-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--sepia);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.wedding__event-heart {
+  color: var(--garnet);
+  font-size: 0.5rem;
+  margin-top: var(--space-xs);
+  opacity: 0.6;
+}
+
+// ─── Footer decorativo ────────────────────────────────────────
+.wedding__footer-deco {
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg) var(--space-lg);
+
+  .ornament-divider {
+    justify-content: center;
+    color: var(--gold);
+  }
+}
+
+.wedding__footer-note {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--warm-gray);
+  text-transform: uppercase;
+  margin-top: var(--space-sm);
+}
+
+// ─── Esquinas decorativas de página ───────────────────────────
+.page-corners {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.corner-deco {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-color: rgba(181, 137, 42, 0.3);
+  border-style: solid;
+
+  &--tl {
+    top: 0;
+    left: 0;
+    border-width: 2px 0 0 2px;
+  }
+
+  &--tr {
+    top: 0;
+    right: 0;
+    border-width: 2px 2px 0 0;
+  }
+}
